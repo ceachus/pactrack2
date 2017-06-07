@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @item.errors.any? %>
+  <% @item.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Item</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_item" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @item.description %>">
+      </div>
+
+      <!-- Label and input for package_id -->
+      <div class="form-group">
+        <label for="package_id" class="control-label">
+          Package
+        </label>
+
+        <input type="text" id="package_id" name="package_id" placeholder="Package" class="form-control" value="<%= @item.package_id %>">
+      </div>
+
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="control-label">
+          Amount
+        </label>
+
+        <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @item.amount %>">
+      </div>
+
+      <!-- Label and input for return_id -->
+      <div class="form-group">
+        <label for="return_id" class="control-label">
+          Return
+        </label>
+
+        <input type="text" id="return_id" name="return_id" placeholder="Return" class="form-control" value="<%= @item.return_id %>">
+      </div>
+
+      <!-- Label and input for order_id -->
+      <div class="form-group">
+        <label for="order_id" class="control-label">
+          Order
+        </label>
+
+        <input type="text" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @item.order_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Item
+      </button>
+      or
+      <a href="/items">Cancel</a>
+    </form>
+  </div>
+</div>

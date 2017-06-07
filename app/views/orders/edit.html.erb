@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @order.errors.any? %>
+  <% @order.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Order #<%= @order.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_order/<%= @order.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for vendor_id -->
+      <div class="form-group">
+        <label for="vendor_id" class="control-label">
+          Vendor
+        </label>
+
+        <input type="text" id="vendor_id" name="vendor_id" placeholder="Vendor" class="form-control" value="<%= @order.vendor_id %>">
+      </div>
+
+      <!-- Label and input for order_date -->
+      <div class="form-group">
+        <label for="order_date" class="control-label">
+          Order date
+        </label>
+
+        <input type="text" id="order_date" name="order_date" placeholder="Order date" class="form-control" value="<%= @order.order_date %>">
+      </div>
+
+      <!-- Label and input for order_description -->
+      <div class="form-group">
+        <label for="order_description" class="control-label">
+          Order description
+        </label>
+
+        <textarea id="order_description" name="order_description" placeholder="Order description" class="form-control" rows="3"><%= @order.order_description %></textarea>
+      </div>
+
+      <!-- Label and input for quoted_arrival_date -->
+      <div class="form-group">
+        <label for="quoted_arrival_date" class="control-label">
+          Quoted arrival date
+        </label>
+
+        <input type="text" id="quoted_arrival_date" name="quoted_arrival_date" placeholder="Quoted arrival date" class="form-control" value="<%= @order.quoted_arrival_date %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @order.user_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Order
+      </button>
+      or
+      <a href="/orders/<%= @order.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

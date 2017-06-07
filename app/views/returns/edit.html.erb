@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @return.errors.any? %>
+  <% @return.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Return #<%= @return.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_return/<%= @return.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for ship_date -->
+      <div class="form-group">
+        <label for="ship_date" class="control-label">
+          Ship date
+        </label>
+
+        <input type="text" id="ship_date" name="ship_date" placeholder="Ship date" class="form-control" value="<%= @return.ship_date %>">
+      </div>
+
+      <!-- Label and input for return_by_date -->
+      <div class="form-group">
+        <label for="return_by_date" class="control-label">
+          Return by date
+        </label>
+
+        <input type="text" id="return_by_date" name="return_by_date" placeholder="Return by date" class="form-control" value="<%= @return.return_by_date %>">
+      </div>
+
+      <!-- Label and input for return_notes -->
+      <div class="form-group">
+        <label for="return_notes" class="control-label">
+          Return notes
+        </label>
+
+        <textarea id="return_notes" name="return_notes" placeholder="Return notes" class="form-control" rows="3"><%= @return.return_notes %></textarea>
+      </div>
+
+      <!-- Label and input for vendor_receipt_date -->
+      <div class="form-group">
+        <label for="vendor_receipt_date" class="control-label">
+          Vendor receipt date
+        </label>
+
+        <input type="text" id="vendor_receipt_date" name="vendor_receipt_date" placeholder="Vendor receipt date" class="form-control" value="<%= @return.vendor_receipt_date %>">
+      </div>
+
+      <!-- Label and input for refund_receipt_date -->
+      <div class="form-group">
+        <label for="refund_receipt_date" class="control-label">
+          Refund receipt date
+        </label>
+
+        <input type="text" id="refund_receipt_date" name="refund_receipt_date" placeholder="Refund receipt date" class="form-control" value="<%= @return.refund_receipt_date %>">
+      </div>
+
+      <!-- Label and input for return_reason -->
+      <div class="form-group">
+        <label for="return_reason" class="control-label">
+          Return reason
+        </label>
+
+        <input type="text" id="return_reason" name="return_reason" placeholder="Return reason" class="form-control" value="<%= @return.return_reason %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Return
+      </button>
+      or
+      <a href="/returns/<%= @return.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

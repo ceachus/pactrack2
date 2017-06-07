@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @package.errors.any? %>
+  <% @package.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Package #<%= @package.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_package/<%= @package.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @package.notes %></textarea>
+      </div>
+
+      <!-- Label and input for tracking_number -->
+      <div class="form-group">
+        <label for="tracking_number" class="control-label">
+          Tracking number
+        </label>
+
+        <input type="text" id="tracking_number" name="tracking_number" placeholder="Tracking number" class="form-control" value="<%= @package.tracking_number %>">
+      </div>
+
+      <!-- Label and input for tracking_arrival_date -->
+      <div class="form-group">
+        <label for="tracking_arrival_date" class="control-label">
+          Tracking arrival date
+        </label>
+
+        <input type="text" id="tracking_arrival_date" name="tracking_arrival_date" placeholder="Tracking arrival date" class="form-control" value="<%= @package.tracking_arrival_date %>">
+      </div>
+
+      <!-- Label and input for order_id -->
+      <div class="form-group">
+        <label for="order_id" class="control-label">
+          Order
+        </label>
+
+        <input type="text" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @package.order_id %>">
+      </div>
+
+      <!-- Label and input for date_of_receipt -->
+      <div class="form-group">
+        <label for="date_of_receipt" class="control-label">
+          Date of receipt
+        </label>
+
+        <input type="text" id="date_of_receipt" name="date_of_receipt" placeholder="Date of receipt" class="form-control" value="<%= @package.date_of_receipt %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Package
+      </button>
+      or
+      <a href="/packages/<%= @package.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

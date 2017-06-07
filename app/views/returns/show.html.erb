@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Return #<%= @return.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Ship date</dt>
+      <dd><%= @return.ship_date %></dd>
+
+      <dt>Return by date</dt>
+      <dd><%= @return.return_by_date %></dd>
+
+      <dt>Return notes</dt>
+      <dd><%= @return.return_notes %></dd>
+
+      <dt>Vendor receipt date</dt>
+      <dd><%= @return.vendor_receipt_date %></dd>
+
+      <dt>Refund receipt date</dt>
+      <dd><%= @return.refund_receipt_date %></dd>
+
+      <dt>Return reason</dt>
+      <dd><%= @return.return_reason %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/returns" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/returns/<%= @return.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_return/<%= @return.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
