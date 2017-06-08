@@ -10,14 +10,14 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Vendor name</th>
-        <th>Category</th>
+        <!-- <th>Category</th> -->
         <th>Actions</th>
       </tr>
 
       <% @vendors.each do |vendor| %>
       <tr>
         <td><%= vendor.vendor_name %></td>
-        <td><%= vendor.category %></td>
+        <!-- <td><%= vendor.category %></td> -->
         <td>
           <a href="/vendors/<%= vendor.id %>" class="btn btn-primary">Show</a>
           <a href="/vendors/<%= vendor.id %>/edit" class="btn btn-warning">Edit</a>
