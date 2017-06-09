@@ -17,5 +17,5 @@ def quoted_arrival_date_cannot_be_in_the_past
 belongs_to :user
 has_many :items, :dependent => :destroy
 belongs_to :vendor
-has_many :packages, :through => :items, :source => :package
+has_many :packages
 end

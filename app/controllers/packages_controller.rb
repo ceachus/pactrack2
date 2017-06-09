@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   def index
-    @packages = Package.all
+    @packages = current_user.packages
 
     render("packages/index.html.erb")
   end

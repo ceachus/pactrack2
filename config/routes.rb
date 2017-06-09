@@ -71,7 +71,7 @@ Rails.application.routes.draw do
   root 'packages#index'
   # Routes for the Package resource:
   # CREATE
-  get "/packages/new", :controller => "packages", :action => "new"
+  get "/packages/new/:order_id", :controller => "packages", :action => "new"
   post "/create_package", :controller => "packages", :action => "create"
 
   # READ
