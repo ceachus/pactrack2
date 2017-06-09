@@ -19,9 +19,8 @@
         <td><%= vendor.vendor_name %></td>
         <!-- <td><%= vendor.category %></td> -->
         <td>
-          <a href="/vendors/<%= vendor.id %>" class="btn btn-primary">Show</a>
-          <a href="/vendors/<%= vendor.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_vendor/<%= vendor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/vendors/<%= vendor.id %>/edit" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          <a href="/delete_vendor/<%= vendor.id %>" class="btn btn-danger" rel="nofollow"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </td>
       </tr>
       <% end %>

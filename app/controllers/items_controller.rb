@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = current_user.items
 
     render("items/index.html.erb")
   end
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     save_status = @item.save
 
     if save_status == true
-      redirect_to("/items/#{@item.id}", :notice => "Item created successfully.")
+      redirect_to("/orders/#{@item.order_id}", :notice => "Item created successfully.")
     else
       render("items/new.html.erb")
     end

@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170530165725) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "vendor_id"
-    t.string   "order_date"
+    t.date     "order_date"
     t.text     "order_description"
     t.date     "quoted_arrival_date"
     t.integer  "user_id"
