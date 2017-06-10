@@ -23,17 +23,17 @@
         <label for="vendor_id" class="control-label">
           Vendor
         </label>
-
-        <input type="text" id="vendor_id" name="vendor_id" placeholder="Vendor" class="form-control" value="<%= @order.vendor_id %>">
+        <%= select_tag("vendor_id", options_from_collection_for_select(Vendor.all, :id, :vendor_name, @order.vendor_id), :class => "form-control") %>
+        <!-- <input type="text" id="vendor_id" name="vendor_id" placeholder="Vendor" class="form-control" value="<%= @order.vendor_id %>"> -->
       </div>
 
       <!-- Label and input for order_date -->
       <div class="form-group">
-        <label for="order_date" class="control-label">
+        <label for="date_ordered" class="control-label">
           Order date
         </label>
 
-        <input type="text" id="order_date" name="order_date" placeholder="Order date" class="form-control" value="<%= @order.order_date %>">
+        <input type="text" id="date_ordered" name="date_ordered" placeholder="mm/dd/yyyy" class="form-control" value="<%= @order.date_ordered %>">
       </div>
 
       <!-- Label and input for order_description -->
@@ -51,7 +51,7 @@
           Quoted arrival date
         </label>
 
-        <input type="text" id="quoted_arrival_date" name="quoted_arrival_date" placeholder="Quoted arrival date" class="form-control" value="<%= @order.quoted_arrival_date %>">
+        <input type="text" id="quoted_arrival_date" name="quoted_arrival_date" placeholder="mm/dd/yyyy" class="form-control" value="<%= @order.quoted_arrival_date %>">
       </div>
 
       <!-- Label and input for user_id -->

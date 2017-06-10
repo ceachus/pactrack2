@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @order = Order.new
 
     @order.vendor_id = params[:vendor_id]
-    @order.order_date = params[:order_date]
+    @order.date_ordered = params[:date_ordered]
     @order.order_description = params[:order_description]
     @order.quoted_arrival_date = params[:quoted_arrival_date]
     @order.user_id = params[:user_id]
@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
 
     @order.vendor_id = params[:vendor_id]
-    @order.order_date = params[:order_date]
+    @order.date_ordered = params[:date_ordered]
     @order.order_description = params[:order_description]
     @order.quoted_arrival_date = params[:quoted_arrival_date]
     @order.user_id = params[:user_id]

@@ -42,5 +42,11 @@
   <label for="items" class="control-label">
     Which Items are in this Package?
   </label>
-
+  <ul class="list-group">
+            <% @package.items.each do |item| %>
+              <li class="list-group-item">
+                  <a href="/items/<%= item.id %>"><%= item.description %></a>
+              </li>
+            <% end %>
+          </ul>
 </div>

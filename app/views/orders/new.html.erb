@@ -29,18 +29,11 @@
 
       <!-- Label and input for order_date -->
       <div class="form-group">
-        <label for="order_date" class="control-label">
+        <label for="date_ordered" class="control-label">
           Order date
         </label>
 
-        <div class="input-group date" data-provide="datepicker">
-            <input type="text" class="form-control">
-            <div class="input-group-addon">
-                <span class="glyphicon glyphicon-th"></span>
-            </div>
-        </div>
-
-        <!-- <input type="text" id="order_date" name="order_date" placeholder="dd/mm/yyyy" class="form-control" value="<%= @order.order_date %>"> -->
+        <input type="text" id="date_ordered" name="date_ordered" placeholder="dd/mm/yyyy" class="form-control" value="<%= @order.date_ordered %>">
       </div>
 
       <!-- Label and input for order_description -->
@@ -58,14 +51,7 @@
           Quoted arrival date
         </label>
 
-        <div class="input-group date" data-provide="datepicker">
-            <input type="text" class="form-control">
-            <div class="input-group-addon">
-                <span class="glyphicon glyphicon-th"></span>
-            </div>
-        </div>
-
-        <!-- <input type="text" id="quoted_arrival_date" name="quoted_arrival_date" placeholder="dd/mm/yyyy" class="form-control" value="<%= @order.quoted_arrival_date %>"> -->
+        <input type="text" id="quoted_arrival_date" name="quoted_arrival_date" placeholder="dd/mm/yyyy" class="form-control" value="<%= @order.quoted_arrival_date %>">
       </div>
 
       <!-- Label and input for user_id -->

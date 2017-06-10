@@ -18,18 +18,18 @@
         <th>Actions</th>
       </tr>
 
-      <% @returns.each do |return| %>
+      <% @returns.each do |something| %>
       <tr>
-        <td><%= return.ship_date %></td>
-        <td><%= return.return_by_date %></td>
-        <td><%= return.return_notes %></td>
-        <td><%= return.vendor_receipt_date %></td>
-        <td><%= return.refund_receipt_date %></td>
-        <td><%= return.return_reason %></td>
+        <td><%= something.ship_date %></td>
+        <td><%= something.return_by_date %></td>
+        <td><%= something.return_notes %></td>
+        <td><%= something.vendor_receipt_date %></td>
+        <td><%= something.refund_receipt_date %></td>
+        <td><%= something.return_reason %></td>
         <td>
-          <a href="/returns/<%= return.id %>" class="btn btn-primary">Show</a>
-          <a href="/returns/<%= return.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_return/<%= return.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/returns/<%= something.id %>" class="btn btn-primary">Show</a>
+          <a href="/returns/<%= something.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_return/<%= something.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
