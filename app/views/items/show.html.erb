@@ -9,7 +9,7 @@
       <dd><%= @item.description %></dd>
 
       <dt>Package</dt>
-      <dd><%= @item.package_id %></dd>
+      <dd><a href="/packages/<%= @item.package_id %>"><%= @item.package.tracking_number %></a></dd>
 
       <dt>Price</dt>
       <dd>$<%= @item.amount %></dd>
@@ -17,8 +17,8 @@
       <!-- <dt>Return</dt>
       <dd><%= @item.return_id %></dd> -->
 
-      <dt>Order</dt>
-      <dd><%= @item.order_id %></dd>
+      <dt>Order ID</dt>
+      <dd><a href="/orders/<%= @item.order_id %>"><%= @item.order_id %></a></dd>
 
     </dl>
 

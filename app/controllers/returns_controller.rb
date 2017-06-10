@@ -36,6 +36,7 @@ class ReturnsController < ApplicationController
       item = Item.find(params[:item_id])
       item.return_id = @return.id
       item.save
+
       redirect_to("/returns/#{@return.id}", :notice => "Return created successfully.")
     else
       render("returns/new.html.erb")

@@ -9,6 +9,7 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Item</th>
         <th>Ship date</th>
         <th>Return by date</th>
         <th>Return notes</th>
@@ -20,6 +21,7 @@
 
       <% @returns.each do |something| %>
       <tr>
+        <td><a href=items/<%= something.item.id %>><%= something.item.description %></a></td>
         <td><%= something.ship_date %></td>
         <td><%= something.return_by_date %></td>
         <td><%= something.return_notes %></td>

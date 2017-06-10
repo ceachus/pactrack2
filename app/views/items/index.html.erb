@@ -25,17 +25,19 @@
         <!-- <td><%= item.package_id %></td> -->
         <td>$<%= item.amount %></td>
         <!-- <td><%= item.return_id %></td> -->
-        <td><%= item.order_id %></td>
+        <td><a href="orders/<%= item.order_id %>"><%= item.order_id %></a></td>
         <td><% if item.package_id != nil %>
           <a href="/packages/<%= item.package_id %>"> Yes! See Package Tracking </a>
         <% end %></td>
-        <td>Placeholder</td>
+        <td> <% if item.return_id != nil %>
+          <a href="/returns/<%= item.return_id %>">Yes</a>
+        <% end %></td>
 
         <td>
           <a href="/items/<%= item.id %>" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></a>
           <a href="/items/<%= item.id %>/edit" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
           <a href="/delete_item/<%= item.id %>" class="btn btn-danger" rel="nofollow"><i class="fa fa-trash" aria-hidden="true"></i></a>
-          <a href="/returns/new/<%= item.id %>" class="btn btn-success"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Return Item </a>
+          <a href="/returns/new/<%= item.id %>" class="btn btn-info"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Return Item </a>
         </td>
       </tr>
       <% end %>
