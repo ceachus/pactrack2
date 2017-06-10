@@ -52,7 +52,7 @@ Rails.application.routes.draw do
 
   # Routes for the Return resource:
   # CREATE
-  get "/returns/new", :controller => "returns", :action => "new"
+  get "/returns/new/:item_id", :controller => "returns", :action => "new"
   post "/create_return", :controller => "returns", :action => "create"
 
   # READ

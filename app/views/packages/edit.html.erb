@@ -19,13 +19,13 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for notes -->
-      <div class="form-group">
-        <label for="notes" class="control-label">
+      <!-- <div class="form-group"> -->
+        <!-- <label for="notes" class="control-label">
           Notes
-        </label>
+        </label> -->
 
-        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @package.notes %></textarea>
-      </div>
+        <!-- <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @package.notes %></textarea> -->
+      <!-- </div> -->
 
       <!-- Label and input for tracking_number -->
       <div class="form-group">
@@ -47,11 +47,11 @@
 
       <!-- Label and input for order_id -->
       <div class="form-group">
-        <label for="order_id" class="control-label">
+        <!-- <label for="order_id" class="control-label">
           Order
-        </label>
+        </label> -->
 
-        <input type="text" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @package.order_id %>">
+        <input type="hidden" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @package.order_id %>">
       </div>
 
       <!-- Label and input for date_of_receipt -->

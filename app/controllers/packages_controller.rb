@@ -14,6 +14,8 @@ class PackagesController < ApplicationController
   def new
     @package = Package.new
 
+    @package.order_id = params[:order_id]
+
     render("packages/new.html.erb")
   end
 

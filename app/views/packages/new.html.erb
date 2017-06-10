@@ -47,11 +47,11 @@
 
       <!-- Label and input for order_id -->
       <div class="form-group">
-        <label for="order_id" class="control-label">
+        <!-- <label for="order_id" class="control-label">
           Order
-        </label>
+        </label> -->
 
-        <input type="text" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @package.order_id %>">
+        <input type="hidden" id="order_id" name="order_id" placeholder="Order" class="form-control" value="<%= @package.order_id %>">
       </div>
 
       <!-- Label and input for date_of_receipt -->

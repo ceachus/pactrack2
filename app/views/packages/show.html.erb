@@ -1,12 +1,12 @@
 <div class="page-header">
-  <h3>Package #<%= @package.id %></h3>
+  <h3>Package Review</h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Notes</dt>
-      <dd><%= @package.notes %></dd>
+      <!-- <dt>Notes</dt>
+      <dd><%= @package.notes %></dd> -->
 
       <dt>Tracking number</dt>
       <dd><%= @package.tracking_number %></dd>
@@ -14,13 +14,14 @@
       <dt>Tracking arrival date</dt>
       <dd><%= @package.tracking_arrival_date %></dd>
 
-      <dt>Order</dt>
-      <dd><%= @package.order_id %></dd>
+      <!-- <dt>Order</dt>
+      <dd><%= @package.order_id %></dd> -->
 
       <dt>Date of receipt</dt>
       <dd><%= @package.date_of_receipt %></dd>
 
     </dl>
+
 
     <div class="btn-group btn-group-justified">
       <a href="/packages" class="btn btn-primary">
@@ -34,4 +35,12 @@
       </a>
     </div>
   </div>
+</div>
+
+<h3>Package Items</h3>
+<div class="form-group">
+  <label for="items" class="control-label">
+    Which Items are in this Package?
+  </label>
+
 </div>

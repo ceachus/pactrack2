@@ -14,6 +14,8 @@ class ReturnsController < ApplicationController
   def new
     @return = Return.new
 
+    @return.item_ids = params[:item_ids]
+
     render("returns/new.html.erb")
   end
 
