@@ -27,13 +27,15 @@
         <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @item.description %>">
       </div>
 
+
+
       <!-- Label and input for package_id -->
       <div class="form-group">
         <label for="package_id" class="control-label">
           Package
         </label>
+        <%= select_tag("package_id", options_from_collection_for_select(current_user.packages, :id, :tracking_number, @item.package_id), include_blank: true, :class => "form-control") %>
 
-        <input type="text" id="package_id" name="package_id" placeholder="Package" class="form-control" value="<%= @item.package_id %>">
       </div>
 
       <!-- Label and input for amount -->

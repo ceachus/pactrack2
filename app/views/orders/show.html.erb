@@ -85,7 +85,14 @@
         <input type="text" id="amount" name="amount" placeholder="Price" class="form-control">
       </div>
 
-
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="control-label">
+          Package
+        </label>
+        <%= select_tag("package_id", options_from_collection_for_select(current_user.packages, :id, :tracking_number, @order.package_ids), include_blank: true, :class => "form-control") %>
+        <!-- <input type="text" id="amount" name="amount" placeholder="Price" class="form-control"> -->
+      </div>
 
       <!-- Label and input for order_id -->
       <div class="form-group">

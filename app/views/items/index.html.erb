@@ -14,6 +14,8 @@
         <th>Price</th>
         <!-- <th>Return</th> -->
         <th>Order ID</th>
+        <th>Shipped?</th>
+        <th>Returned?</th>
         <th>Actions</th>
       </tr>
 
@@ -21,9 +23,13 @@
       <tr>
         <td><%= item.description %></td>
         <!-- <td><%= item.package_id %></td> -->
-        <td><%= item.amount %></td>
+        <td>$<%= item.amount %></td>
         <!-- <td><%= item.return_id %></td> -->
         <td><%= item.order_id %></td>
+        <td><% if item.package_id != nil %>
+          <a href="/packages/<%= item.package_id %>"> Yes! See Package Tracking </a>
+        <% end %></td>
+        <td>Placeholder</td>
 
         <td>
           <a href="/items/<%= item.id %>" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></a>

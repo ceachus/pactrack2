@@ -45,6 +45,15 @@
         <input type="text" id="tracking_arrival_date" name="tracking_arrival_date" placeholder="Tracking arrival date" class="form-control" value="<%= @package.tracking_arrival_date %>">
       </div>
 
+      <!-- Label and input for adding an item to a package -->
+      <div class="form-group">
+        <label for="item" class="control-label">
+          Item
+        </label>
+
+        <%= select_tag("item", options_from_collection_for_select(current_user.items, :id, :description, @package.item_ids), :class => "form-control") %>
+      </div>
+
       <!-- Label and input for order_id -->
       <div class="form-group">
         <!-- <label for="order_id" class="control-label">
