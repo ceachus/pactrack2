@@ -30,9 +30,7 @@ class PackagesController < ApplicationController
 
     save_status = @package.save
 
-    item = Item.find(params[:item_id])
-    item.package_id = @package.id
-    item.save
+    
 
     if save_status == true
       redirect_to("/packages/#{@package.id}", :notice => "Package created successfully.")
@@ -40,6 +38,7 @@ class PackagesController < ApplicationController
       render("packages/new.html.erb")
     end
   end
+
 
   def edit
     @package = Package.find(params[:id])

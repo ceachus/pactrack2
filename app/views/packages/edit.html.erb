@@ -42,7 +42,7 @@
           Tracking arrival date
         </label>
 
-        <input type="text" id="tracking_arrival_date" name="tracking_arrival_date" placeholder="Tracking arrival date" class="form-control" value="<%= @package.tracking_arrival_date %>">
+        <input type="text" id="tracking_arrival_date" name="tracking_arrival_date" placeholder="dd/mm/yyyy" class="form-control" value="<%= @package.tracking_arrival_date %>">
       </div>
 
       <!-- Label and input for adding an item to a package -->
@@ -69,11 +69,11 @@
           Date of receipt
         </label>
 
-        <input type="text" id="date_of_receipt" name="date_of_receipt" placeholder="Date of receipt" class="form-control" value="<%= @package.date_of_receipt %>">
+        <input type="text" id="date_of_receipt" name="date_of_receipt" placeholder="dd/mm/yyyy" class="form-control" value="<%= @package.date_of_receipt %>">
       </div>
 
 
-      
+
 
       <button class="btn btn-warning">
         Update Package

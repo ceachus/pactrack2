@@ -31,7 +31,8 @@ class ItemsController < ApplicationController
     if save_status == true
       redirect_to("/orders/#{@item.order_id}", :notice => "Item created successfully.")
     else
-      render("items/new.html.erb")
+      @order = Order.find(params[:order_id])
+      render("orders/show.html.erb")
     end
   end
 

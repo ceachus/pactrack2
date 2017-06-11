@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :orders, :dependent => :destroy
   has_many :items, :through => :orders, :source => :items
-  has_many :returns, :through => :items, :source => :return
+  # has_many :returns, :through => :items, :source => :items
   has_many :packages, :through => :orders
 end

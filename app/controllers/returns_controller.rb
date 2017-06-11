@@ -1,6 +1,6 @@
 class ReturnsController < ApplicationController
   def index
-    @returns = current_user.returns
+    @returns = Return.all
 
     render("returns/index.html.erb")
   end
@@ -14,7 +14,7 @@ class ReturnsController < ApplicationController
   def new
     @return = Return.new
 
-    @return.item_id = params[:item_id]
+    @item = Item.find(params[:item_id])
 
     render("returns/new.html.erb")
   end
