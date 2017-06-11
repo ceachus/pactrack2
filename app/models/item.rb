@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   has_one :vendor, :through => :order
   has_one :user, :through => :order, :source => :user
   belongs_to :package, optional: true
-  has_one :return
+  belongs_to :return
 
 
 end
